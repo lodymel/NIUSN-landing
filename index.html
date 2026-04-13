@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="is-loaded">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -27,36 +27,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div
-      id="page-loader"
-      class="page-loader"
-      role="status"
-      aria-live="polite"
-      aria-busy="true"
-      data-i18n-attr="aria-label:loader.status"
-      aria-label="Loading"
-    >
-      <div class="page-loader__scrim" aria-hidden="true"></div>
-      <div class="page-loader__inner">
-        <div class="page-loader__emblem" aria-hidden="true">
-          <div class="page-loader__emblem-stage">
-            <div class="page-loader__emblem-glass">
-              <div class="page-loader__emblem-spin">
-                <img
-                  class="page-loader__emblem-img"
-                  src="assets/loader-emblem.png"
-                  alt=""
-                  width="256"
-                  height="256"
-                  decoding="async"
-                  fetchpriority="high"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <audio id="niusn-ambient-audio" loop playsinline preload="none">
       <source src="media/ambient.mp3" type="audio/mpeg" />
     </audio>
@@ -822,7 +792,6 @@
 
     <script src="brand-bg.js" defer></script>
     <script src="i18n.js" defer></script>
-    <script src="page-load.js" defer></script>
     <script src="wireframe.js" defer></script>
   </body>
 </html>

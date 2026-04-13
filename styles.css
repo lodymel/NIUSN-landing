@@ -114,154 +114,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body.page-loader-is-active {
-  overflow: hidden;
-}
-
-/* —— Page load (Naya-style preloader + reveal) —— */
-.page-loader {
-  position: fixed;
-  inset: 0;
-  z-index: 200000;
-  display: grid;
-  place-items: center;
-  pointer-events: auto;
-  color: rgba(252, 250, 255, 0.96);
-}
-
-.page-loader__scrim {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(120, 70, 170, 0.35), transparent 55%),
-    radial-gradient(ellipse 70% 55% at 100% 100%, rgba(60, 20, 90, 0.45), transparent 50%),
-    linear-gradient(168deg, #140a1c 0%, #0a050e 55%, #060308 100%);
-}
-
-.page-loader__inner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: min(52rem, calc(100% - 2.5rem));
-  padding: max(1.25rem, env(safe-area-inset-top, 0px)) max(1.25rem, env(safe-area-inset-right, 0px))
-    max(1.25rem, env(safe-area-inset-bottom, 0px)) max(1.25rem, env(safe-area-inset-left, 0px));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-}
-
-/* Preloader emblem: 3D tilt + volumetric shadows (no circular glass plate) */
-.page-loader__emblem {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.page-loader__emblem-stage {
-  perspective: 720px;
-  perspective-origin: 50% 40%;
-}
-
-.page-loader__emblem-glass {
-  position: relative;
-  width: min(220px, 46vw);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;
-  transform-style: preserve-3d;
-  transform: rotateX(16deg) rotateY(-14deg) translateZ(0);
-  background: none;
-  border: none;
-  padding: 0;
-  overflow: visible;
-}
-
-.page-loader__emblem-glass::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -10%;
-  width: min(78%, 10.5rem);
-  height: clamp(0.75rem, 3vw, 1rem);
-  transform: translateX(-50%) scaleY(0.42);
-  transform-origin: 50% 50%;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.2) 48%, transparent 74%);
-  filter: blur(12px);
-  opacity: 0.88;
-}
-
-.page-loader__emblem-spin {
-  position: relative;
-  z-index: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-  will-change: transform;
-  animation: page-loader-emblem-spin 9s linear infinite;
-}
-
-.page-loader__emblem-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: min(52vh, 280px);
-  object-fit: contain;
-  transform: translateZ(18px);
-  filter:
-    drop-shadow(0 1px 0 rgba(255, 252, 255, 0.28))
-    drop-shadow(0 -1px 0 rgba(0, 0, 0, 0.35))
-    drop-shadow(0 14px 22px rgba(0, 0, 0, 0.55))
-    drop-shadow(0 6px 16px rgba(60, 20, 100, 0.45))
-    drop-shadow(0 0 28px rgba(130, 80, 200, 0.28));
-}
-
-@keyframes page-loader-emblem-spin {
-  from {
-    transform: rotate3d(0.18, 1, 0.14, 0deg);
-  }
-
-  to {
-    transform: rotate3d(0.18, 1, 0.14, 360deg);
-  }
-}
-
-.page-loader.is-exiting {
-  pointer-events: none;
-  transition:
-    opacity 0.55s ease 0.35s,
-    transform 1.15s cubic-bezier(0.76, 0, 0.14, 1);
-  transform: translateY(-108%);
-  opacity: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .page-loader.is-exiting {
-    transition: opacity 0.2s ease;
-    transform: none;
-  }
-
-  .page-loader__emblem-spin {
-    animation: none;
-  }
-
-  .page-loader__emblem-glass {
-    transform: none;
-  }
-
-  .page-loader__emblem-img {
-    transform: none;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
-  }
-}
-
 html.is-loaded .site-header {
   animation: page-reveal-header 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -3178,6 +3030,13 @@ html:lang(zh-Hant) .wwd-line .word.wwd-accent {
 .contact-naya__inner {
   position: relative;
   z-index: 1;
+  border: 1px solid var(--bento-border);
+  border-radius: var(--bento-radius);
+  background: var(--bento-surface);
+  box-shadow: var(--bento-shadow-soft);
+  backdrop-filter: blur(22px) saturate(170%);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  padding: clamp(1.35rem, 3.5vw, 2.25rem);
 }
 
 .contact-naya__tag {
@@ -4104,11 +3963,11 @@ html:not(:lang(en)) .wwd-copy--contact-headlines .wwd-display--primary {
     min-height: calc(100dvh - var(--header-h));
     isolation: isolate;
     background:
-      linear-gradient(168deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.02) 38%, transparent 55%),
-      linear-gradient(215deg, transparent 40%, rgba(120, 210, 255, 0.06) 100%),
-      linear-gradient(180deg, rgba(18, 14, 36, 0.42) 0%, rgba(8, 6, 18, 0.52) 100%);
-    backdrop-filter: blur(44px) saturate(200%);
-    -webkit-backdrop-filter: blur(44px) saturate(200%);
+      linear-gradient(168deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 38%, transparent 55%),
+      linear-gradient(215deg, transparent 40%, rgba(120, 210, 255, 0.04) 100%),
+      linear-gradient(180deg, rgba(14, 11, 28, 0.94) 0%, rgba(6, 5, 14, 0.97) 100%);
+    backdrop-filter: blur(32px) saturate(180%);
+    -webkit-backdrop-filter: blur(32px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-top: 1px solid rgba(255, 255, 255, 0.22);
     box-shadow:
