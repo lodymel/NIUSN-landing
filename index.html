@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="is-loaded">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#2A0D3D" />
+    <title>NIUSN · Hong Kong Comic Con 2026</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://www.niusn.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <!-- Adobe Fonts — Proxima Nova(히어로 본문) + Sigurd(브랜드·섹션 타이틀·WWD): 웹 프로젝트에 둘 다 넣은 뒤 주석 해제하고 키트 ID로 바꾸세요. 없으면 Instrument Serif / Syne 등으로 폴백됩니다.
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css" />
+    -->
+    <!-- Adobe Fonts: 히어로는 Erotique Alternate Bold — 웹 프로젝트에 해당 스타일을 추가한 뒤 아래 주석을 해제하고 xxxxxxx를 본인 키트 ID로 바꾸세요. (주석만 두면 브라우저는 세리프 폴백만 씁니다.)
+         키트 편집기 → “Using fonts in CSS”에 나온 font-family·font-weight를 확인해 styles.css의 --font-hero-main-title 맨 앞을 그 이름 순서로 맞추면 됩니다. (erotique / erotique-alternate 등 키트마다 다름)
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css" />
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Mono:ital,wght@0,400;0,500;0,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&family=Montserrat:wght@200;300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="hero-upgrades.css?v=5" />
+  </head>
+  <body>
+    <audio id="niusn-ambient-audio" loop playsinline preload="none">
+      <source src="media/ambient.mp3" type="audio/mpeg" />
+    </audio>
+    <canvas id="brand-bg" class="brand-bg-canvas" width="300" height="300" aria-hidden="true"></canvas>
+    <div class="brand-atmosphere" aria-hidden="true"></div>
+    <a class="skip-link" href="#main" data-i18n="skip">본문으로 건너뛰기</a>
+
+    <header class="site-header">
+      <div class="header-inner nav-wrap">
+        <a
+          class="logo nav-brand"
+          href="#top"
+          data-i18n-attr="aria-label:logo.aria"
+          aria-label="NIUSN: 페이지 상단으로"
+        >
+          <img
+            class="nav-brand-img"
+            src="https://www.niusn.com/assets/images/logo.webp"
+            alt="NIUSN"
+            width="140"
+            height="36"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </a>
+        <div class="header-tools">
+          <button
+            type="button"
+            class="nav-toggle nav-mobile-btn"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span class="nav-toggle-lines" aria-hidden="true"></span>
+            <span class="visually-hidden" data-i18n="nav.menu">메뉴</span>
+          </button>
+          <nav id="site-nav" class="site-nav" data-i18n-attr="aria-label:nav.label" aria-label="주요 메뉴">
+            <span class="nav-active-line" aria-hidden="true"></span>
+            <ul class="nav-links" role="list">
+              <li>
+                <a class="nav-link" href="#top">
+                  <span class="mobile-icons-track" aria-hidden="true">
+                    <span class="mobile-point-trail-wrap">
+                      <img
+                        class="mobile-point mobile-point--trail"
+                        src="assets/brand/light.svg"
+                        width="32"
+                        height="32"
+                        alt=""
+                        decoding="async"
+                      />
+                    </span>
+                    <img
+                      class="mobile-point mobile-point--lead"
+                      src="assets/brand/light.svg"
+                      width="32"
+                      height="32"
+                      alt=""
+                      decoding="async"
+                    />
+                  </span>
+                  <span class="nav-link__label" data-i18n="nav.event">HONGKONG COMIC CON</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-link" href="#booth-info">
+                  <span class="mobile-icons-track" aria-hidden="true">
+                    <span class="mobile-point-trail-wrap">
+                      <img
+                        class="mobile-point mobile-point--trail"
+                        src="assets/brand/light.svg"
+                        width="32"
+                        height="32"
+                        alt=""
+                        decoding="async"
+                      />
+                    </span>
+                    <img
+                      class="mobile-point mobile-point--lead"
+                      src="assets/brand/light.svg"
+                      width="32"
+                      height="32"
+                      alt=""
+                      decoding="async"
+                    />
+                  </span>
+                  <span class="nav-link__label" data-i18n="nav.booth">BOOTH</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-link" href="#what-we-do">
+                  <span class="mobile-icons-track" aria-hidden="true">
+                    <span class="mobile-point-trail-wrap">
+                      <img
+                        class="mobile-point mobile-point--trail"
+                        src="assets/brand/light.svg"
+                        width="32"
+                        height="32"
+                        alt=""
+                        decoding="async"
+                      />
+                    </span>
+                    <img
+                      class="mobile-point mobile-point--lead"
+                      src="assets/brand/light.svg"
+                      width="32"
+                      height="32"
+                      alt=""
+                      decoding="async"
+                    />
+                  </span>
+                  <span class="nav-link__label" data-i18n="nav.about">ABOUT US</span>
+                </a>
+              </li>
+            </ul>
+            <div class="nav-trailing">
+            <button
+              type="button"
+              id="sound-toggle"
+              class="sound-block"
+              aria-pressed="false"
+              data-i18n-attr="aria-label:sound.toggleAria"
+            >
+              <span class="sound-inner">
+                <span class="sound-icon-wrap" aria-hidden="true">
+                  <svg
+                    class="sound-icon-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path class="sound-icon-svg__speaker" d="M11 5 6 9H2v6h4l5 4V5Z" />
+                    <path class="sound-icon-svg__wave sound-icon-svg__wave--a" d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                    <path class="sound-icon-svg__wave sound-icon-svg__wave--b" d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                    <line class="sound-icon-svg__mute" x1="3" y1="21" x2="21" y2="3" />
+                  </svg>
+                </span>
+              </span>
+              <span class="sound-block__caption">
+                <span class="sound-block__state" data-sound-state-label aria-hidden="true">OFF</span>
+              </span>
+            </button>
+            <div id="lang-dropdown" class="lang-dropdown">
+              <span class="visually-hidden" data-i18n="lang.label">언어</span>
+              <button
+                type="button"
+                id="lang-trigger"
+                class="lang-current"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="lang-menu"
+                data-i18n-attr="aria-label:lang.triggerAria"
+              >
+                <span id="lang-label">EN</span>
+                <svg
+                  class="lang-chevron"
+                  viewBox="0 0 10 6"
+                  width="9"
+                  height="5"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1 1l4 4 4-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul
+                id="lang-menu"
+                class="lang-menu"
+                role="listbox"
+                tabindex="-1"
+                hidden
+                data-i18n-attr="aria-label:lang.menuAria"
+              >
+                <li>
+                  <button
+                    type="button"
+                    class="lang-option"
+                    role="option"
+                    data-lang="en"
+                    aria-selected="true"
+                    data-i18n-attr="aria-label:lang.ariaEn"
+                  >
+                    EN
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="lang-option"
+                    role="option"
+                    data-lang="ko"
+                    aria-selected="false"
+                    data-i18n-attr="aria-label:lang.ariaKo"
+                  >
+                    KR
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="lang-option"
+                    role="option"
+                    data-lang="zh-Hans"
+                    aria-selected="false"
+                    data-i18n-attr="aria-label:lang.ariaHans"
+                  >
+                    简体
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="lang-option"
+                    role="option"
+                    data-lang="zh-Hant"
+                    aria-selected="false"
+                    data-i18n-attr="aria-label:lang.ariaHant"
+                  >
+                    繁體
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <a class="nav-cta" href="#contact">
+              <span class="nav-cta__hint" aria-hidden="true">
+                <span class="nav-cta__chev">›</span>
+                <span class="nav-cta__chev">›</span>
+              </span>
+              <span class="nav-cta__text" data-i18n="nav.contact">CONTACT</span>
+            </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section
+        id="top"
+        class="section hero wf-hero wf-hero--trailer"
+        aria-labelledby="page-hero-h1"
+        aria-describedby="page-hero-kicker-a11y page-hero-dates"
+      >
+        <div class="wf-hero__media" aria-hidden="true">
+          <video
+            id="hero-trailer"
+            class="wf-hero__video"
+            playsinline
+            loop
+            muted
+            autoplay
+            preload="auto"
+            tabindex="-1"
+            disablepictureinpicture
+            disableremoteplayback
+          >
+            <source src="media/video.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="wf-hero__scrim" aria-hidden="true"></div>
+        <header class="wf-hero__slogan-block">
+          <div class="wf-hero__slogan-frame">
+            <span class="wf-hero__slogan-frame__corner wf-hero__slogan-frame__corner--tl" aria-hidden="true"
+              ><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 11V1h10" stroke="currentColor" stroke-width="1" stroke-linecap="square" /></svg
+            ></span>
+            <span class="wf-hero__slogan-frame__corner wf-hero__slogan-frame__corner--tr" aria-hidden="true"
+              ><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M11 11V1H1" stroke="currentColor" stroke-width="1" stroke-linecap="square" /></svg
+            ></span>
+            <span class="wf-hero__slogan-frame__corner wf-hero__slogan-frame__corner--bl" aria-hidden="true"
+              ><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 1v10h10" stroke="currentColor" stroke-width="1" stroke-linecap="square" /></svg
+            ></span>
+            <span class="wf-hero__slogan-frame__corner wf-hero__slogan-frame__corner--br" aria-hidden="true"
+              ><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M11 1v10H1" stroke="currentColor" stroke-width="1" stroke-linecap="square" /></svg
+            ></span>
+            <div class="wf-hero__slogan-frame__inner">
+              <p class="wf-hero__slogan-eyebrow" data-i18n="page.wfReadyLine">Be ready for the Next Era</p>
+              <h1 id="page-hero-h1" class="wf-hero__kicker wf-hero__slogan">
+                <span id="page-hero-kicker-a11y" class="wf-hero__kicker-a11y" data-i18n="page.wfCinemaLine">Where AI Becomes Cinema</span>
+                <span class="wf-hero__kicker-chunks" aria-hidden="true">
+                  <span class="wf-hero__kicker-chunk" data-i18n="page.wfKicker1">where</span>
+                  <span class="wf-hero__kicker-chunk" data-i18n="page.wfKicker2">ai</span>
+                  <span class="wf-hero__kicker-chunk" data-i18n="page.wfKicker3">becomes</span>
+                  <span class="wf-hero__kicker-chunk" data-i18n="page.wfKicker4">cinema</span>
+                </span>
+              </h1>
+            </div>
+          </div>
+        </header>
+        <div class="shell wf-hero__shell">
+          <header class="wf-hero__text">
+            <div class="wf-hero__mark-heading">
+              <span class="visually-hidden" data-i18n="page.wfNiusnWord">NIUSN</span>
+              <div class="wf-hero__mark-wrap" aria-hidden="true">
+                <div class="wf-hero__symbol-wrap">
+                  <img
+                    class="wf-hero__mark"
+                    src="assets/brand/niusn-symbol.png"
+                    width="1200"
+                    height="1200"
+                    alt=""
+                    decoding="async"
+                    fetchpriority="high"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="wf-hero__meta">
+              <p class="wf-hero__on" data-i18n="page.wfComicOnLine">COMIC CON 2026</p>
+              <p id="page-hero-dates" class="wf-hero__when" data-i18n="page.wfComicWhen">May 29 - 31 @ Hong Kong HKCEC</p>
+            </div>
+            <a
+              class="hero-cta hero-cta--glass hero-cta--primary wf-hero__cta"
+              href="#booth-info"
+            >
+              <span class="hero-cta__inner">
+                <span class="hero-cta__enter-hint" aria-hidden="true">
+                  <span class="hero-cta__chev">›</span>
+                  <span class="hero-cta__chev">›</span>
+                </span>
+                <span class="hero-cta__label" data-i18n="boothInfo.ctaMain">Booth Information</span>
+              </span>
+            </a>
+          </header>
+        </div>
+      </section>
+
+      <section
+        id="booth-info"
+        class="section wf-booth-section wf-booth-landing"
+        aria-labelledby="booth-landing-title"
+        aria-describedby="booth-info-map-label"
+      >
+        <div class="booth-landing__intro shell booth-reveal-item" style="--br-order: 0">
+          <header class="booth-landing-head">
+            <div class="booth-slogan-head">
+              <div class="wf-hero__slogan-frame">
+                <span class="wf-hero__slogan-frame__corner wf-hero__slogan-frame__corner--tl" aria-hidden="true"
+                  ><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 11V1h10" stroke="currentColor" stroke-width="1" stroke-linecap="square" /></svg
+                ></span>
+                <span class="wf-hero__slogan-frame__corner wf-hero__slogan-frame__corner--tr" aria-hidden="true"
+                  ><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M11 11V1H1" stroke="currentColor" stroke-width="1" stroke-linecap="square" /></svg
+                ></span>
+                <span class="wf-hero__slogan-frame__corner wf-hero__slogan-frame__corner--bl" aria-hidden="true"
+                  ><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 1v10h10" stroke="currentColor" stroke-width="1" stroke-linecap="square" /></svg
+                ></span>
+                <span class="wf-hero__slogan-frame__corner wf-hero__slogan-frame__corner--br" aria-hidden="true"
+                  ><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M11 1v10H1" stroke="currentColor" stroke-width="1" stroke-linecap="square" /></svg
+                ></span>
+                <div class="wf-hero__slogan-frame__inner">
+                  <h2 id="booth-landing-title" class="wf-hero__kicker wf-hero__slogan booth-landing__title">
+                    <span id="booth-landing-title-a11y" class="wf-hero__kicker-a11y" data-i18n="boothInfo.landingH2"
+                      >Booth & location</span
+                    >
+                    <span class="wf-hero__kicker-chunks" aria-hidden="true">
+                      <span class="wf-hero__kicker-chunk" data-i18n="boothInfo.landingChunk1">booth</span>
+                      <span class="wf-hero__kicker-chunk wf-hero__kicker-chunk--joiner" data-i18n="boothInfo.landingChunk2">&amp;</span>
+                      <span class="wf-hero__kicker-chunk" data-i18n="boothInfo.landingChunk3">location</span>
+                    </span>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+        <p id="booth-info-map-label" class="visually-hidden" data-i18n="boothInfo.mapLabel">
+          Stylized floor plan: NIUSN at Hall 3E, booth 3E-D29
+        </p>
+        <div class="booth-live-embed shell booth-reveal-item" style="--br-order: 1" role="region" aria-label="Booth map">
+          <iframe
+            class="booth-live-embed__iframe"
+            title="NIUSN — Hall 3E floor"
+            src="booth-interactive.html?v=6"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="booth-landing-inbooth">
+          <div class="booth-slot-showcase shell" id="booth-slot" aria-labelledby="pe-photo-title-main">
+            <div class="booth-xp">
+              <div class="booth-slot-showcase__inner booth-xp__grid">
+                <div class="booth-slot-showcase__copy">
+                <span class="booth-slot-showcase__badge booth-reveal-item" style="--br-order: 2" data-i18n="boothSlot.badge">In-booth event</span>
+                <h3 class="booth-slot-showcase__headline booth-reveal-item" style="--br-order: 3" id="pe-photo-title-main">
+                  <span class="booth-slot-showcase__title1" data-i18n="boothSlot.titleKicker">NIUSN PHOTO EVENT</span>
+                  <span class="booth-slot-showcase__title2" data-i18n="boothSlot.titleGold">Win a GOLD!</span>
+                </h3>
+                <p class="booth-slot-showcase__hours booth-reveal-item" style="--br-order: 4" data-i18n="boothSlot.hours">
+                  10:00 AM FRI, MAY. 29 to 7:00 PM SUN, MAY. 31
+                </p>
+                <div class="booth-slot-showcase__body booth-reveal-item" style="--br-order: 5" data-i18n-html="boothSlot.bodyHtml">
+                  <p class="booth-slot-showcase__p">
+                    Step into our Cinematic Photo Zone and become the hero. Capture your moment to earn a spin on the
+                    Slot Machine.
+                  </p>
+                  <p class="booth-slot-showcase__p">
+                    Amazing prizes await: will you claim the legendary 1st place? Gold, fancy character bags, and more
+                    merch.
+                  </p>
+                  <p class="booth-slot-showcase__p booth-slot-showcase__p--foot">
+                    Come and visit us. We are waiting for you. NIUSN is on
+                    <span class="booth-booth-pill" aria-label="Booth">#3E-D29</span>
+                  </p>
+                </div>
+                </div>
+                <div
+                  class="booth-slot-showcase__stage booth-reveal-item"
+                  style="--br-order: 6"
+                  role="group"
+                  data-i18n-attr="aria-label:boothSlot.kioskGroupAria"
+                >
+                <div class="booth-slot-kv">
+                  <div class="booth-slot-kv__frame-wrap booth-slot-kv__frame-wrap--mirror">
+                    <iframe
+                      class="booth-slot-kv__frame booth-slot-kv__frame--mirror"
+                      src="slot-kv-mirror.html?v=8"
+                      data-i18n-attr="title:boothSlot.mirrorFrameTitle"
+                      title="NIUSN slot — booth preview (local demo, same UI as slot game)"
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                  <p class="booth-slot-kv__mirror-hint" data-i18n="boothSlot.showcaseHint">
+                    Preview only — visit our booth to play for real prizes. First prize: gold.
+                  </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="stage-event"
+        class="section stage-event"
+        aria-labelledby="stage-event-heading"
+        data-i18n-attr="aria-label:stageEvent.sectionAria"
+      >
+        <div class="stage-event__inner shell">
+          <div class="stage-event__bento wf-block">
+            <header class="stage-event__head">
+              <p class="stage-event__eyebrow stage-event__reveal" style="--sr-order: 0" data-i18n="stageEvent.eyebrow">
+                NIUSN · Hong Kong Comic Con 2026
+              </p>
+              <h2
+                id="stage-event-heading"
+                class="stage-event__title stage-event__reveal"
+                style="--sr-order: 1"
+                data-i18n="stageEvent.title"
+              >
+                Stage Event
+              </h2>
+            </header>
+            <div class="stage-event__content">
+              <div
+                class="stage-event__schedule stage-event__reveal"
+                style="--sr-order: 2"
+                role="group"
+                data-i18n-attr="aria-label:stageEvent.scheduleAria"
+                data-i18n-html="stageEvent.scheduleHtml"
+              >
+                <span class="stage-event__schedule-line">NIUSN COMIC CON SPEECH</span>
+                <span class="stage-event__schedule-line stage-event__schedule-line--time">10:00 AM FRI. MAY. 29 – 7:00 PM SUN. MAY. 31</span>
+              </div>
+              <p class="stage-event__body stage-event__reveal" style="--sr-order: 3" data-i18n="stageEvent.body">
+                We are thrilled to announce an exclusive keynote session featuring Seok-hwan Park, CEO of NIUSN, introducing
+                the brand identity of NIUSN and demonstrate how we are redefining classics through cutting-edge AI technology.
+                Don’t miss the moment where technology meets pure artistry.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="shell main-shell bento-page">
+        <section
+          id="what-we-do"
+          class="section wwd c-block-section"
+          aria-labelledby="wwd-title"
+          aria-describedby="wwd-summary"
+        >
+          <div class="wwd-cblock" data-wwd-cblock>
+            <div class="wwd-cblock__bg" aria-hidden="true">
+              <div class="wwd-cblock__media" data-wwd-cblock-media>
+                <div class="wwd-cblock__video-wrap">
+                  <video
+                    class="wwd-cblock__video"
+                    data-wwd-cblock-video
+                    muted
+                    playsinline
+                    loop
+                    preload="metadata"
+                    disablepictureinpicture
+                    disableremoteplayback
+                    aria-hidden="true"
+                    tabindex="-1"
+                  >
+                    <source src="media/about-us.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="wwd-cblock__overlay"></div>
+                <div class="wwd-cblock__studio-rim" aria-hidden="true"></div>
+                <div class="wwd-cblock__grain" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="wwd-cblock__fg">
+              <div class="section-head section-head--wwd">
+                <h2 id="wwd-title" class="title-hero" data-i18n="nav.whatWeDo">ABOUT US</h2>
+              </div>
+              <div class="wwd-copy">
+                <p id="wwd-summary" class="visually-hidden" data-i18n="wwd.summary">
+                  We are thrilled to announce an exclusive keynote session featuring Seok-hwan Park, CEO of NIUSN,
+                  introducing the brand identity of NIUSN and demonstrate how we are redefining classics through cutting-edge AI
+                  technology. Don’t miss the moment where technology meets pure artistry. NIUSN goes beyond being a content
+                  production company to redefine the future of education through technology. By crafting world-class
+                  animations powered by AI, we are establishing a new educational standard that has never been seen before.
+                </p>
+                <div class="wwd-content-block">
+                  <div class="wwd-description-wrapper">
+                    <div class="wwd-story" role="region" data-i18n-attr="aria-label:wwd.storyRegionAria">
+                      <p
+                        id="wwd-manifesto"
+                        class="wwd-manifesto wwd-display wwd-display--primary wwd-display--stack"
+                        data-i18n-attr="aria-label:wwd.manifestoAria"
+                      >
+                        <span class="wwd-line line-mask" aria-hidden="true">
+                          <span class="line" aria-hidden="true">
+                            <span class="word" data-i18n="wwd.manifestoL1w1">WHERE</span>
+                            <span class="word" data-i18n="wwd.manifestoL1w2">AI</span>
+                            <span class="word" data-i18n="wwd.manifestoL1w3">BECOMES</span>
+                            <span class="word" data-i18n="wwd.manifestoL1w4">CINEMA—</span>
+                          </span>
+                        </span>
+                        <span class="wwd-line line-mask" aria-hidden="true">
+                          <span class="line" aria-hidden="true">
+                            <span class="word" data-i18n="wwd.manifestoL2w1">AND</span>
+                            <span class="word" data-i18n="wwd.manifestoL2w2">BECOMES</span>
+                            <span class="word" data-i18n="wwd.manifestoL2w3">EDUCATION</span>
+                            <span class="word" data-i18n="wwd.manifestoL2w4">THAT</span>
+                            <span class="word" data-i18n="wwd.manifestoL2w5">SHIPS.</span>
+                          </span>
+                        </span>
+                      </p>
+                      <p class="wwd-story__lead wwd-story__reveal" style="--ws-d: 0.42s" data-i18n="wwd.storyLead">
+                        One keynote. One show floor. NIUSN turns frontier AI into cinematic education—live in Hong Kong,
+                        and on this site.
+                      </p>
+                      <div class="wwd-story__grid">
+                        <article class="wwd-story__beat wwd-story__reveal" style="--ws-d: 0.52s">
+                          <span class="wwd-story__index" aria-hidden="true">01</span>
+                          <h3 class="wwd-story__beat-title" data-i18n="wwd.story1Title">Keynote that reframes the brand</h3>
+                          <p class="wwd-story__beat-text" data-i18n="wwd.story1Text">
+                            Seok-hwan Park introduces NIUSN’s identity and how we remix classics with cutting-edge AI—where
+                            technology meets pure artistry.
+                          </p>
+                        </article>
+                        <article class="wwd-story__beat wwd-story__reveal" style="--ws-d: 0.6s">
+                          <span class="wwd-story__index" aria-hidden="true">02</span>
+                          <h3 class="wwd-story__beat-title" data-i18n="wwd.story2Title">World-class AI animation</h3>
+                          <p class="wwd-story__beat-text" data-i18n="wwd.story2Text">
+                            Animation as infrastructure: precise, poetic, and built to teach—not only to stream.
+                          </p>
+                        </article>
+                        <article class="wwd-story__beat wwd-story__reveal" style="--ws-d: 0.68s">
+                          <span class="wwd-story__index" aria-hidden="true">03</span>
+                          <h3 class="wwd-story__beat-title" data-i18n="wwd.story3Title">Education, re-architected</h3>
+                          <p class="wwd-story__beat-text" data-i18n="wwd.story3Text">
+                            Beyond a studio—we prototype the learning standards tomorrow’s audiences expect.
+                          </p>
+                        </article>
+                      </div>
+                      <div class="wwd-story__cta-row wwd-story__reveal" style="--ws-d: 0.76s">
+                        <a class="wwd-story__cta" href="#booth-info" data-i18n="wwd.storyCtaBooth">Plan your visit · Booth #3E-D29</a>
+                        <a class="wwd-story__cta wwd-story__cta--ghost" href="#top" data-i18n="wwd.storyCtaExplore">Explore the event hero</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section contact contact--naya" aria-labelledby="contact-title">
+          <div class="contact-naya">
+            <div class="contact-naya__tag" aria-hidden="true">
+              <span class="title-xl" data-i18n="contact.sectionTag">Contact</span>
+            </div>
+
+            <div class="contact-naya__inner">
+              <div class="contact-naya__intro">
+                <div class="contact-naya__copy">
+                  <p class="contact-naya__copy-lead" data-i18n="contact.lede1">
+                    행사·제휴·문의가 있으신가요?
+                  </p>
+                  <p class="contact-naya__copy-sub" data-i18n="contact.lede2">남겨 주시면 빠르게 연락드릴게요.</p>
+                </div>
+                <h2 id="contact-title" class="contact-naya__headlines wwd-copy wwd-copy--contact-headlines">
+                  <span class="wwd-display wwd-display--primary wwd-display--stack">
+                    <span class="wwd-line"><span class="word" data-i18n="contact.head1">Let's</span></span>
+                    <span class="wwd-line"><span class="word" data-i18n="contact.head2">Connect</span></span>
+                    <span class="wwd-line"><span class="word" data-i18n="contact.head3">NIUSN</span></span>
+                  </span>
+                </h2>
+              </div>
+
+              <form class="contact-form contact-form--naya" action="#" method="post">
+                <div class="contact-form--naya__grid">
+                  <div class="contact-field">
+                    <label class="visually-hidden" for="contact-name" data-i18n="contact.name">이름</label>
+                    <input
+                      id="contact-name"
+                      class="contact-input"
+                      type="text"
+                      name="name"
+                      autocomplete="name"
+                      required
+                      data-i18n-placeholder="contact.phName"
+                      placeholder="이름"
+                    />
+                    <div class="contact-input-line" aria-hidden="true">
+                      <span class="contact-input-line__base"></span>
+                      <span class="contact-input-line__fill"></span>
+                    </div>
+                  </div>
+                  <div class="contact-field">
+                    <label class="visually-hidden" for="contact-email" data-i18n="contact.email">이메일</label>
+                    <input
+                      id="contact-email"
+                      class="contact-input"
+                      type="email"
+                      name="email"
+                      autocomplete="email"
+                      required
+                      data-i18n-placeholder="contact.phEmail"
+                      placeholder="이메일"
+                    />
+                    <div class="contact-input-line" aria-hidden="true">
+                      <span class="contact-input-line__base"></span>
+                      <span class="contact-input-line__fill"></span>
+                    </div>
+                  </div>
+                  <div class="contact-field contact-field--full">
+                    <label class="visually-hidden" for="contact-message" data-i18n="contact.message">메시지</label>
+                    <textarea
+                      id="contact-message"
+                      class="contact-input contact-textarea"
+                      name="message"
+                      rows="5"
+                      required
+                      data-i18n-placeholder="contact.phMessage"
+                      placeholder="메시지"
+                    ></textarea>
+                    <div class="contact-input-line" aria-hidden="true">
+                      <span class="contact-input-line__base"></span>
+                      <span class="contact-input-line__fill"></span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-touch primary contact-submit-naya"
+                  disabled
+                  data-i18n="contact.submitCta"
+                >
+                  Get in touch
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-shell">
+        <nav class="footer-sns" data-i18n-attr="aria-label:footer.snsNavAria" aria-label="Social links">
+          <ul class="footer-sns-list">
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="#" rel="noopener noreferrer">X</a></li>
+            <li><a href="#" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+            <li><a href="#" rel="noopener noreferrer">TikTok</a></li>
+            <li><a href="#" rel="noopener noreferrer">Xiaohongshu</a></li>
+          </ul>
+        </nav>
+        <p class="footer-copy" data-i18n="footer.copyright">© 2026 NIUSN Corp. All rights reserved.</p>
+      </div>
+      <section
+        class="footer-marquee"
+        data-i18n-attr="aria-label:footer.marqueeAria"
+        aria-label="NIUSN · AI-Powered Animation Studio · Hong Kong Comic Con 2026 · venue"
+      >
+        <div class="footer-marquee__viewport" aria-hidden="true">
+          <div class="footer-marquee__track">
+            <div class="footer-marquee__row">
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+            </div>
+            <div class="footer-marquee__row">
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+              <div class="footer-marquee__chunk">
+                <span class="footer-marquee__brand">NIUSN</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeTagline">AI-Powered Animation Studio</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <img class="footer-marquee__mark" src="assets/star.svg" alt="" width="14" height="14" decoding="async" />
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeEvent">Hong Kong Comic Con 2026</span>
+                <span class="footer-marquee__sep" aria-hidden="true">·</span>
+                <span data-i18n="footer.marqueeVenue">Hong Kong Convention and Exhibition Centre</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <button
+      type="button"
+      id="scroll-to-top"
+      class="scroll-top-fab"
+      hidden
+      data-i18n-attr="aria-label:scrollTopFab.aria"
+      aria-label="Back to top"
+    >
+      <svg class="scroll-top-fab__ring" viewBox="0 0 44 44" width="44" height="44" aria-hidden="true" focusable="false">
+        <circle class="scroll-top-fab__ring-track" cx="22" cy="22" r="17.75" fill="none" pathLength="100" />
+        <g transform="rotate(-90 22 22)">
+          <circle class="scroll-top-fab__ring-prog" cx="22" cy="22" r="17.75" fill="none" pathLength="100" />
+        </g>
+      </svg>
+      <span class="scroll-top-fab__inner">
+        <span class="scroll-top-fab__hover" aria-hidden="true"></span>
+        <svg
+          class="scroll-top-fab__arrow"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 21L12 3M12 3L20.5 11.5M12 3L3.5 11.5"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+    </button>
+
+    <script src="brand-bg.js" defer></script>
+    <script src="i18n.js?v=9" defer></script>
+    <script src="wireframe.js?v=3" defer></script>
+    <script src="hero-symbol-3d.js?v=9" defer></script>
+  </body>
+</html>

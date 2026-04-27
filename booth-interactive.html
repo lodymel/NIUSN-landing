@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script>
+      document.documentElement.classList.toggle("is-embed", window.self !== window.top);
+    </script>
+    <meta name="color-scheme" content="dark" />
+    <title>Niusn — HKCEC Hall 3E Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="booth-hkcc-design.css?v=2" />
+    <script>
+      window.TWEAK_DEFAULTS = { accent: "#E9A5F2", showLabels: true };
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="app">
+        <div class="bg-aurora" aria-hidden="true"></div>
+        <aside class="info" aria-label="Booth details">
+          <div class="info-top">
+            <div class="brandrow">
+              <div class="logo-mark" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 22 22">
+                  <defs>
+                    <linearGradient id="lm" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0%" stop-color="oklch(0.82 0.18 320)" />
+                      <stop offset="100%" stop-color="oklch(0.58 0.20 295)" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="22" height="22" rx="6" fill="url(#lm)" />
+                  <path
+                    d="M 6 15 L 6 7 L 16 15 L 16 7"
+                    stroke="white"
+                    stroke-width="1.8"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="brand">NIUSN</div>
+                <div class="brand-sub">AI-Powered Animation Studio</div>
+              </div>
+            </div>
+            <span class="live-pill">
+              <span class="live-dot"></span>
+              Live
+            </span>
+          </div>
+
+          <div class="headline">
+            <div class="eyebrow">Find us at</div>
+            <div class="booth-id">
+              <span class="hash">#</span>3E<span class="sep">-</span>D29
+            </div>
+            <div class="venue">Hong Kong Comic Con 2026 · HKCEC · Hall 3E</div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-item">
+              <div class="meta-label">Dates</div>
+              <div class="meta-value">29–31 May 2026</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Hall</div>
+              <div class="meta-value">3E · Row D</div>
+            </div>
+            <div class="meta-item full">
+              <div class="meta-label">Opening hours</div>
+              <div class="hours-list">
+                <div class="hours-row"><span>Fri</span><span>10:00 – 20:00</span></div>
+                <div class="hours-row"><span>Sat</span><span>10:00 – 20:00</span></div>
+                <div class="hours-row"><span>Sun</span><span>10:00 – 19:00</span></div>
+              </div>
+              <div class="hours-foot">Last entry 30 min before close</div>
+            </div>
+          </div>
+
+          <button type="button" class="focus-btn" id="focusMapBtn">
+            <span id="focusMapBtnLabel">Show me the way</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+              <path
+                d="M 3 7 L 11 7 M 7 3 L 11 7 L 7 11"
+                stroke="currentColor"
+                stroke-width="1.6"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+
+          <button type="button" class="reset-btn" id="resetMapBtn">See full floorplan</button>
+
+          <div class="legend">
+            <div class="legend-row">
+              <span class="legend-sw dest"></span><span>Niusn booth</span>
+            </div>
+            <div class="legend-row">
+              <span class="legend-sw other"></span><span>Other exhibitors</span>
+            </div>
+            <div class="legend-row">
+              <span class="legend-sw entrance"></span><span>Main entrance</span>
+            </div>
+          </div>
+        </aside>
+
+        <div class="map-wrap" id="mapWrap">
+          <div class="map-chrome">
+            <div class="chip">HKCEC · 3F · Halls 3C / 3D / 3E</div>
+            <div class="zoom-hint">Tap <strong>Show me the way</strong> to find us</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/floorplan-data.js"></script>
+    <script src="assets/booth-hkcc-map.js?v=2"></script>
+  </body>
+</html>

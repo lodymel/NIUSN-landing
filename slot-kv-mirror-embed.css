@@ -1,0 +1,133 @@
+/* Embedded slot (landing iframe): same CSS/token scale as slot-machine-niusn.vercel.app — no document scrollbar.
+   Full UI is scaled inside `.slot-embed-scale` so `.stage` / `.machine` entrance transforms stay intact. */
+:root {
+  /* Landing: no full-page void behind the machine (standalone app keeps --void). */
+  --void: transparent;
+  --purple-void: transparent;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  scrollbar-width: none;
+  color-scheme: dark;
+  background-color: transparent;
+  background: transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  min-height: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* flex-start: when scaled stack + insets slightly exceed the iframe, top (chrome) stays visible */
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: clip;
+  scrollbar-width: none;
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  justify-content: center;
+  /* Must not clip .message tier reveals (translateZ / translateY) or confetti margins */
+  overflow: visible;
+  background-color: transparent;
+  background: transparent;
+}
+
+/* Embed-only: slot-kv-mirror.css .stage uses large clamps — too tall inside landing iframe on phones */
+main.stage {
+  padding-top: max(env(safe-area-inset-top), 6px);
+  padding-bottom: max(env(safe-area-inset-bottom), 10px);
+  padding-left: max(env(safe-area-inset-left), 10px);
+  padding-right: max(env(safe-area-inset-right), 10px);
+  gap: clamp(10px, 2.5vmin, 20px);
+  background-color: transparent;
+  background: transparent;
+}
+
+.machine .message {
+  position: relative;
+  z-index: 45;
+}
+
+.slot-embed-scale,
+section.machine {
+  background-color: transparent;
+  background: transparent;
+}
+
+.confetti {
+  background-color: transparent;
+}
+
+/* Backdrop blur samples “through” a transparent iframe root → UA often composites white.
+   Embed: turn it off; rely on solid-enough fills from --glass / gradients above. */
+.stat,
+.symbol-inner,
+.prize {
+  /* Transparent iframe root + backdrop-filter → white/milky compositing in Chromium/WebKit */
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Uniform fit: stack ~900–940px unscaled; subtract stage insets + margin for iframe/mobile toolbars */
+.slot-embed-scale {
+  flex: 0 0 auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  transform-origin: top center;
+  transform: scale(
+    min(
+      1,
+      calc((min(100dvh, 100svh) - 52px) / 940),
+      calc((100dvw - 24px) / 700)
+    )
+  );
+}
+
+@media (max-height: 520px) {
+  .slot-embed-scale {
+    transform: scale(
+      min(
+        1,
+        calc((min(100dvh, 100svh) - 48px) / 960),
+        calc((100dvw - 20px) / 700)
+      )
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .slot-embed-scale {
+    transform: scale(
+      min(
+        1,
+        calc((min(100dvh, 100svh) - 44px) / 960),
+        calc((100dvw - 20px) / 700)
+      )
+    );
+  }
+}

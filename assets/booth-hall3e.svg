@@ -1,0 +1,29 @@
+<svg viewBox="0 0 870 670" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="HKCEC Hall 3E plan">
+  <defs>
+    <linearGradient id="niusnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95"></stop>
+      <stop offset="100%" stop-color="#7c3aed"></stop>
+    </linearGradient>
+  </defs>
+  <image width="870" height="670" x="0" y="0" href="booth-map-hero.png" preserveAspectRatio="xMidYMid meet"></image>
+  <circle cx="661" cy="265" r="6" fill="none" stroke="rgba(217,70,239,0.55)" stroke-width="1" pointer-events="none">
+    
+    
+  </circle>
+  <circle cx="661" cy="265" r="6" fill="none" stroke="rgba(167,139,250,0.4)" stroke-width="0.8" pointer-events="none">
+    
+    
+  </circle>
+  <rect id="niusnBooth" class="booth-niusn" x="630" y="234" width="62" height="62" rx="8" fill="url(#niusnGrad)" stroke="#d946ef" stroke-width="1.2" data-booth="NIUSN #3E-D29"></rect>
+  <line x1="661" y1="232" x2="661" y2="212" stroke="rgba(217,70,239,0.4)" stroke-width="0.8" stroke-dasharray="3,2"></line>
+  <rect x="600" y="185" width="122" height="26" rx="5" fill="rgba(13,0,32,0.92)" stroke="rgba(217,70,239,0.45)" stroke-width="0.8"></rect>
+  <text x="661" y="201" text-anchor="middle" dominant-baseline="middle" font-family="Syne,system-ui,sans-serif" font-size="8.5" font-weight="600" fill="#f0abfc" letter-spacing="0.08em">
+    NIUSN  #3E-D29
+  </text>
+  <text x="661" y="258" text-anchor="middle" dominant-baseline="middle" font-family="Syne,system-ui,sans-serif" font-size="18" font-weight="800" fill="#f0abfc" pointer-events="none">
+    N
+  </text>
+  <text x="661" y="275" text-anchor="middle" dominant-baseline="middle" font-family="Syne,system-ui,sans-serif" font-size="6.5" font-weight="500" fill="rgba(196,181,253,0.9)" letter-spacing="0.1em" pointer-events="none">
+    3E-D29
+  </text>
+</svg>

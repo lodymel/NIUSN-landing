@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#080510" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>NIUSN Slot — Booth preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@1&family=Outfit:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="slot-kv-mirror.css?v=1" />
+    <link rel="stylesheet" href="slot-kv-mirror-embed.css?v=8" />
+  </head>
+  <body>
+    <main class="stage">
+      <div class="slot-embed-scale">
+      <section class="machine" aria-labelledby="machine-title">
+        <h2 id="machine-title" class="visually-hidden">Four-reel slot — diamond, star, drop, or miss</h2>
+
+        <div class="machine__chrome">
+          <div class="machine__chrome-shine" aria-hidden="true"></div>
+          <div class="machine__bezel">
+            <div class="machine__glass">
+              <div class="machine__glass-shimmer" aria-hidden="true"></div>
+              <div class="machine__payline" aria-hidden="true"></div>
+              <div class="reels reels--4" id="reels">
+                <div class="reel-wrap" data-reel="0"><div class="reel"></div></div>
+                <div class="reel-wrap" data-reel="1"><div class="reel"></div></div>
+                <div class="reel-wrap" data-reel="2"><div class="reel"></div></div>
+                <div class="reel-wrap" data-reel="3"><div class="reel"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="machine__controls">
+            <div class="stat">
+              <span class="stat__label">Booth tokens</span>
+              <span class="stat__value" id="credits">9999</span>
+            </div>
+            <button type="button" class="spin-btn" id="spinBtn" aria-label="Spin the four reels">
+              <span class="spin-btn__glow" aria-hidden="true"></span>
+              <span class="spin-btn__ring spin-btn__ring--outer" aria-hidden="true"></span>
+              <span class="spin-btn__ring spin-btn__ring--dash" aria-hidden="true"></span>
+              <span class="spin-btn__label">Spin</span>
+            </button>
+            <div class="stat">
+              <span class="stat__label">Prize tier</span>
+              <span class="stat__value stat__value--tier" id="lastWin">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="message" id="message" role="status" aria-live="polite"></div>
+      </section>
+      </div>
+    </main>
+
+    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+    <script src="slot-kv-mirror-symbols.js?v=1"></script>
+    <script src="slot-kv-mirror-slot.js?v=2"></script>
+  </body>
+</html>

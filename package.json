@@ -1,0 +1,7 @@
+{
+  "name": "niusn-landing",
+  "private": true,
+  "scripts": {
+    "dev": "npx --yes serve ."
+  }
+}

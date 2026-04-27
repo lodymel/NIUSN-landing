@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+# Dev / scratch (not used by the live site)
+_map_zip_extract/
+_tmp_remote_clone/
+# GitHub hard limit 100MB — host separately or use Git LFS if you need this in-repo
+media/about-us.mp4
